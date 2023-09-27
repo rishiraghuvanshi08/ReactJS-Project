@@ -16,7 +16,9 @@ class Sidebar extends Component{
                     <ul><button onClick={() => this.setState({selected: 'login'})}>Login</button></ul>
                     <ul><button onClick={() => this.setState({selected: 'contact'})}>Contact</button></ul>
                 </div>
-                <Display selectedValue={this.state.selected} />
+                <div id="displayContent">
+                    <Display selectedValue={this.state.selected} />
+                </div>
              </>
         );
     }
