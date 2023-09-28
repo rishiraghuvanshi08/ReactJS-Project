@@ -3,28 +3,19 @@ import './App.css';
 import Main from './components/Main';
 import Display from './components/Display';
 import Sidebar from './components/Sidebar';
+import ReduxCount from './components/ReduxCount';
+import {useDispatch} from 'react-redux';
 
 function App() {
+  const dispatch = useDispatch();
   return (
-    <div className="App">
-      {
-        // <Main />
-        <Sidebar />
-      /* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */
-      }
+    <div className="App" id="sidebar">
+        {/* <Main />
+            <Sidebar /> */}
+        <h1>Increment Decrement Button</h1>
+        <button onClick={() => dispatch({type: 'INCREMENT'})}>Increment</button>
+        <ReduxCount />
+        <button onClick={() => dispatch({type: 'DECREMENT'})}>Decrement</button>
     </div>
   );
 }
